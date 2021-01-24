@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+  <!-- NEOMORPHISM INPUT -->
+  <div class="wrapper-form">
+    <span class="circle"></span>
+    <span class="circle"></span>
+    <span class="circle"></span>
+    <span class="circle"></span>
+    <span class="circle"></span>
+    <span class="circle"></span>
+    <span class="circle"></span>
+    <span class="circle"></span>
+    <span class="circle"></span>
+    <span class="circle"></span>
+
+    <div class="card-glass">
+      <div class="card-glass-header">
+        <div class="glass-header-text">Sign Up</div>
+      </div>
+
+      <div class="glass-container">
+        <div class="form-glass-group">
+          <input type="text" class="form-glass-control" placeholder="Username">
+        </div>
+        <div class="form-glass-group">
+          <input type="text" class="form-glass-control" placeholder="Email">
+        </div>
+
+        <div class="form-glass-group">
+          <input type="password" class="form-glass-control" placeholder="Password" id="password">
+          <div class="show-hide-toggle" onclick="showHide()">Show</div>
+        </div>
+        <a href="#" class="btn btn btn-primary">Register</a>
+        <a class="btn" href="#"><svg height="20" viewBox="0 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg"
+            style="padding-top:5px;">
+            <g fill=" none" fill-rule="evenodd">
+              <path
+                d="M482.56 261.36c0-16.73-1.5-32.83-4.29-48.27H256v91.29h127.01c-5.47 29.5-22.1 54.49-47.09 71.23v59.21h76.27c44.63-41.09 70.37-101.59 70.37-173.46z"
+                fill="#4285f4"></path>
+              <path
+                d="M256 492c63.72 0 117.14-21.13 156.19-57.18l-76.27-59.21c-21.13 14.16-48.17 22.53-79.92 22.53-61.47 0-113.49-41.51-132.05-97.3H45.1v61.15c38.83 77.13 118.64 130.01 210.9 130.01z"
+                fill="#34a853"></path>
+              <path
+                d="M123.95 300.84c-4.72-14.16-7.4-29.29-7.4-44.84s2.68-30.68 7.4-44.84V150.01H45.1C29.12 181.87 20 217.92 20 256c0 38.08 9.12 74.13 25.1 105.99l78.85-61.15z"
+                fill="#fbbc05"></path>
+              <path
+                d="M256 113.86c34.65 0 65.76 11.91 90.22 35.29l67.69-67.69C373.03 43.39 319.61 20 256 20c-92.25 0-172.07 52.89-210.9 130.01l78.85 61.15c18.56-55.78 70.59-97.3 132.05-97.3z"
+                fill="#ea4335"></path>
+              <path d="M20 20h472v472H20V20z"></path>
+            </g>
+          </svg></a>
+        <a class="btn" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25 25"
+            style="padding-top:5px;">
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg></a>
+      </div>
+
+      <div class="card-glass-footer">
+        <div class="glass-footer-text">Already have accout ? <a href="#" class="custom-glass-link">Sign In!</a></div>
+      </div>
+
+    </div>
+
+    <svg class="gooey">
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDevitaton="10" />
+        <feColorMatrix values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 20 -10      
+        " />
+      </filter>
+    </svg>
+  </div>
+
+
+
+  <script type="text/javascript">
+    const password = document.getElementById('password');
+    const toggleShowHide = document.querySelector('.show-hide-toggle');
+
+    function showHide() {
+      if (password.type === 'password') {
+        password.setAttribute('type', 'text');
+        toggleShowHide.innerHTML = "Hide"
+      } else {
+        password.setAttribute('type', 'password');
+        toggleShowHide.innerHTML = "Show"
+      }
+    }
+
+  </script>
+</body>
+
+</html>

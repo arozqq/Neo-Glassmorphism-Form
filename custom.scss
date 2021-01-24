@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper-form {
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  overflow: hidden;
+  position: relative;
+  filter: url(#gooey);
+
+
+    $particleSize: 20vmin;
+    $animationDuration: 6s;
+    $amount: 10;
+
+    span.circle {
+      width: $particleSize;
+      height: $particleSize;
+      border-radius: $particleSize;
+      backface-visibility: hidden;
+      position: absolute;
+      animation-name: move;
+      animation-duration: $animationDuration;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      $colors: (
+      #583C87,
+      #E45A84,
+      #FFACAC
+      );
+      @for $i from 1 through $amount {
+        &:nth-child(#{$i}) {
+        color: nth($colors, random(length($colors)));
+        top: random(100) * 1%;
+        left: random(100) * 1%;
+        animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+        animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+        transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+        $blurRadius: (random() + 0.5) * $particleSize * 0.5;
+        $x: if(random() > 0.5, -1, 1);
+        box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+        }
+      }
+    }
+  }
+
+.card-glass {
+  position: relative;
+  width: 944px;
+  background: radial-gradient(100.21% 271.27% a t 2.81% 7.08%, rgba(255, 252, 252, 0.3) 0%, rgba(250, 250, 250, 0.07) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  box-shadow: 30px 20px 70px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  align-items: center;
+  flex-direction: column;
+  
+  @media screen and (max-width:678px){
+    margin: 20px;
+    width: 100%;
+  }
+}
+
+.card-glass-header {
+  width: 100%;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 30px 30px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+     
+.form-glass-group {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 35px;
+  }
+  
+  
+  .card-glass-footer {
+    width: 100%;
+    height: 70px;
+    // background: rgba(255, 255, 255, 0.5);
+    border-radius: 0px 0px 30px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+  }
+  
+  .glass-header-text {
+    font-weight: 600;
+    font-size: 2em;
+    color: #6777EF;
+  }
+
+.glass-footer-text {
+  font-weight: 400;
+  font-size: 1em;
+  color: white;
+}
+
+svg.gooey {
+  width: 0;
+  height: 0;
+}
+
+// neomorphism input
+input.form-glass-control {
+  padding: 13px 16px;
+  border: none;
+  max-width: 100%;
+  outline: none;
+  font-size: 1.5em;
+  color: white;
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1),
+            0px -2px 5px rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  margin: 15px auto;
+  
+  &::placeholder {
+    font-size: .7em;
+    color: white;
+  }
+}
+
+.show-hide-toggle{
+  position: absolute;
+  font-size: .8em;
+  z-index: 3;
+  right: 33%;
+  background: rgba(255, 255, 255, 0.09);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1),
+  0px -2px 5px rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  color: #6777EF;
+  font-weight: 600;
+
+  @media only screen and (max-width:500px){
+    right: 10%;
+  }
+}
+
+.glass-container{
+  margin: 20px 40px;
+}
+.btn {
+  padding:10px 16px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: white;
+  margin: 13px 7px;
+  display: inline-block;
+}
+
+.btn-primary{
+  color: white;
+  background-color: #6777EF;
+  margin-left: 33px;
+  text-decoration: none;
+}
+
+
+@keyframes background {
+  0%, 100%
+  {
+  background-image:hue-rotate(90deg);
+  }
+  50% 
+  {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
